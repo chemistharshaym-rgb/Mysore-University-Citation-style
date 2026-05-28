@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-US">
+  <info>
+    <title>Custom Materials Science Numeric Style</title>
+    <id>http://www.zotero.org/styles/custom-materials-science-numeric</id>
+    <link href="http://www.zotero.org/styles/custom-materials-science-numeric" rel="self"/>
+    <author>
+      <name>OpenAI ChatGPT</name>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="engineering"/>
+    <updated>2026-05-28T00:00:00+00:00</updated>
+  </info>
+
+  <locale xml:lang="en">
+    <terms>
+      <term name="and">and</term>
+    </terms>
+  </locale>
+
+  <macro name="author">
+    <names variable="author">
+      <name form="short"
+            initialize-with=". "
+            and="text"
+            delimiter=", "
+            sort-separator=" "/>
+    </names>
+  </macro>
+
+  <macro name="journal">
+    <group>
+      <text variable="container-title" form="short" font-style="italic"/>
+      <text value=", "/>
+      <text variable="volume" font-weight="bold"/>
+      <text value=" "/>
+      <date variable="issued" prefix="(" suffix=")">
+        <date-part name="year"/>
+      </date>
+      <text value=" "/>
+      <text variable="page-first"/>
+    </group>
+  </macro>
+
+  <citation collapse="citation-number">
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <bibliography entry-spacing="0" second-field-align="flush">
+    <layout suffix=".">
+      <group delimiter=", ">
+        <text macro="author"/>
+        <text macro="journal"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
